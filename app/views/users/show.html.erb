@@ -10,5 +10,10 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>First post:</strong>
+  <%= !@user.microposts.find_by(id:1).nil? ? @user.microposts.find_by(id:1).content : "No posts found" %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
